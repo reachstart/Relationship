@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anniversary 💞</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-base: #070913;
+            --accent-pink: #ff2a74;
+            --accent-gold: #ffd700;
+            --accent-handsome: #00f3ff;
+            --accent-beautiful: #ff00a0;
+            
+            /* Enhanced Vibrant Stats Glow Colors */
+            --c-years: #00f0ff;
+            --c-months: #39ff14;
+            --c-weeks: #ffea00;
+            --c-days: #ff007f;
+            --c-hours: #b500ff;
+            --c-mins: #ff6c00;
+            --c-secs: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg-base);
+            background-image: url('https://i.postimg.cc/Sx5Y11ZN/image-(5).png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 15px;
+            overflow-x: hidden;
+        }
+
+        /* Highly Responsive Layout Shell */
+        .mobile-viewport-shell {
+            width: 100%;
+            max-width: 410px;
+            background: rgba(10, 14, 26, 0.88);
+            border-radius: 36px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.85), 0 0 40px rgba(255, 42, 116, 0.2);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            padding: 24px 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            position: relative;
+        }
+
+        /* Audio Widget Panel */
+        .music-player-widget {
+            background: rgba(255, 42, 116, 0.12);
+            border: 1px solid rgba(255, 42, 116, 0.4);
+            border-radius: 20px;
+            padding: 10px 14px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            box-shadow: 0 0 15px rgba(255, 42, 116, 0.15);
+        }
+        .music-info {
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        .music-title {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #ffffff;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .music-sub {
+            font-size: 0.6rem;
+            color: rgba(255,255,255,0.6);
+        }
+        .play-btn-node {
+            background: var(--accent-pink);
+            border: none;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            color: white;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.8rem;
+            box-shadow: 0 0 12px var(--accent-pink);
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+        .play-btn-node:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 18px var(--accent-pink);
+        }
+
+        .app-brand-header {
+            text-align: center;
+        }
+        .app-brand-header h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            background: linear-gradient(to right, #ffffff, #ff7aa2, var(--accent-beautiful));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 20px rgba(255, 0, 160, 0.4);
+        }
+        .app-brand-header p {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: #9ca3af;
+            margin-top: 4px;
+        }
+
+        /* Upgraded Pink Total Time Milestone Panel */
+        .white-milestone-panel {
+            background: linear-gradient(135deg, rgba(255, 42, 116, 0.25) 0%, rgba(255, 0, 160, 0.1) 100%);
+            color: #ffffff;
+            border-radius: 24px;
+            padding: 18px;
+            text-align: center;
+            border: 2px solid var(--accent-pink);
+            box-shadow: 0 0 25px rgba(255, 42, 116, 0.45), inset 0 0 15px rgba(255, 42, 116, 0.2);
+            animation: pinkBoxPulse 3s ease-in-out infinite alternate;
+        }
+        @keyframes pinkBoxPulse {
+            0% { transform: scale(1); box-shadow: 0 0 20px rgba(255, 42, 116, 0.4); }
+            100% { transform: scale(1.02); box-shadow: 0 0 32px rgba(255, 42, 116, 0.7); }
+        }
+        .milestone-caption-lbl {
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #ffb7d2;
+            font-weight: 700;
+            text-shadow: 0 0 8px rgba(255, 42, 116, 0.5);
+        }
+        .milestone-counter-display {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: #ffffff;
+            line-height: 1.1;
+            margin: 4px 0;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.4), 0 0 8px var(--accent-pink);
+        }
+        .milestone-footer-date {
+            font-size: 0.75rem;
+            color: #e5e7eb;
+            font-weight: 500;
+        }
+
+        /* Dashboard Grid Base Frame */
+        .dashboard-mid-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 14px;
+            align-items: center;
+            border: 2px solid var(--accent-gold);
+            border-radius: 26px;
+            padding: 14px;
+            background: rgba(255, 215, 0, 0.03);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Ultra-Cool Glowing Mechanical Clock face */
+        .luxury-analog-dial {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            border: 3px solid var(--accent-gold);
+            background: radial-gradient(circle, rgba(255, 42, 116, 0.15) 0%, rgba(5, 7, 15, 0.9) 100%),
+                        url('https://i.postimg.cc/43hpQRQF/L.jpg');
+            background-size: cover;
+            background-position: center;
+            box-shadow: 0 0 25px rgba(255, 215, 0, 0.6), inset 0 0 20px rgba(0, 0, 0, 0.9);
+            position: relative;
+        }
+        .luxury-analog-dial::after {
+            content: '';
+            position: absolute;
+            inset: -5px;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            pointer-events: none;
+        }
+        .dial-numeral {
+            position: absolute;
+            font-size: 0.7rem;
+            font-weight: 800;
+            color: var(--accent-gold);
+            text-shadow: 0 0 6px #000;
+        }
+        .num-12 { top: 6px; left: 50%; transform: translateX(-50%); }
+        .num-3  { right: 10px; top: 50%; transform: translateY(-50%); }
+        .num-6  { bottom: 6px; left: 50%; transform: translateX(-50%); }
+        .num-9  { left: 10px; top: 50%; transform: translateY(-50%); }
+
+        /* Smooth 3D Cast Clock Hands */
+        .clock-hand-vector {
+            position: absolute;
+            bottom: 50%;
+            left: 50%;
+            transform-origin: bottom center;
+            border-radius: 4px;
+            z-index: 5;
+            filter: drop-shadow(-2px 4px 3px rgba(0, 0, 0, 0.8));
+        }
+        .hand-hour { width: 4px; height: 38px; background: #ffffff; }
+        .hand-minute { width: 2.5px; height: 50px; background: var(--accent-gold); }
+        .hand-second { width: 1.5px; height: 56px; background: var(--accent-pink); }
+        
+        .dial-center-axis {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #ffffff;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            box-shadow: 0 0 8px #fff;
+        }
+
+        /* Upgraded Dynamic Effect Stats Breakdown Panel */
+        .numerical-matrix-board {
+            background: rgba(8, 12, 22, 0.9);
+            border-radius: 22px;
+            padding: 14px 12px;
+            border: 2px solid var(--accent-beautiful);
+            box-shadow: 0 0 20px rgba(255, 0, 160, 0.3);
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+        }
+        .matrix-row-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.75rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding-bottom: 4px;
+        }
+        .matrix-row-item:last-child { border-bottom: none; padding-bottom: 0; }
+        .matrix-lbl { color: #cccccc; font-weight: 500; }
+        
+        /* Premium Countdown Value Scale Animation */
+        .matrix-val { 
+            font-weight: 800; 
+            font-size: 1.05rem;
+            animation: valPulseBreathe 2s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate;
+        }
+        @keyframes valPulseBreathe {
+            0% { transform: scale(1); filter: brightness(1); }
+            100% { transform: scale(1.05); filter: brightness(1.2); }
+        }
+
+        #v-yr { color: var(--c-years); text-shadow: 0 0 8px rgba(0,240,255,0.4); }
+        #v-mo { color: var(--c-months); text-shadow: 0 0 8px rgba(57,255,20,0.4); }
+        #v-wk { color: var(--c-weeks); text-shadow: 0 0 8px rgba(255,234,0,0.4); }
+        #v-dy { color: var(--c-days); text-shadow: 0 0 8px rgba(255,0,127,0.4); }
+        #v-hr { color: var(--c-hours); text-shadow: 0 0 8px rgba(181,0,255,0.4); }
+        #v-mn { color: var(--c-mins); text-shadow: 0 0 8px rgba(255,108,0,0.4); }
+        #v-sc { color: var(--c-secs); text-shadow: 0 0 12px var(--accent-pink); }
+
+        /* Heart Loop Moving Orbit Arena Frame */
+        .relationship-orbit-deck {
+            height: 220px;
+            background: rgba(14, 20, 38, 0.65);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 26px;
+            position: relative;
+            z-index: 5;
+            box-shadow: inset 0 2px 10px rgba(0,0,0,0.6);
+        }
+
+        .cats-centerpiece-node {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 85px;
+            height: 85px;
+            z-index: 2;
+        }
+        .cats-centerpiece-node img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            filter: drop-shadow(0 4px 15px rgba(255, 42, 116, 0.6));
+            animation: centerpieceBreathe 2s ease-in-out infinite alternate;
+        }
+        @keyframes centerpieceBreathe {
+            0% { transform: scale(0.95); }
+            100% { transform: scale(1.08); }
+        }
+
+        .orbital-avatar-pod {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 65px;
+            margin-left: -32.5px;
+            margin-top: -32.5px;
+            z-index: 10;
+        }
+
+        .globe-mesh-ring {
+            position: relative;
+            width: 52px;
+            height: 52px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .globe-mesh-ring::before {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 2px dashed var(--theme-color);
+            animation: spinningGlobeOrbit 4s linear infinite;
+            box-shadow: 0 0 12px var(--theme-color);
+        }
+
+        .pod-profile-circle {
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            padding: 2px;
+            background: #0d121f;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid var(--theme-color);
+        }
+        .pod-profile-circle img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .pod-identity-tag {
+            font-size: 0.55rem;
+            font-weight: 700;
+            color: #ffffff;
+            background: rgba(11, 15, 25, 0.9);
+            padding: 2px 6px;
+            border-radius: 6px;
+            margin-top: 6px;
+            border: 0.5px solid rgba(255,255,255,0.2);
+            white-space: nowrap;
+        }
+
+        /* Seamless Path Heart-Shaped Walk Loop Trail Engine Layout Mappings */
+        .path-beautiful-runner { animation: heartRouteTracingEngine 16s linear infinite; }
+        .path-handsome-runner { animation: heartRouteTracingEngine 16s linear infinite; animation-delay: -8s; }
+
+        @keyframes heartRouteTracingEngine {
+            0%   { left: 50%; top: 25%; }
+            12.5% { left: 24%; top: 18%; }
+            25%  { left: 8%;  top: 40%; }
+            37.5% { left: 24%; top: 72%; }
+            50%  { left: 50%; top: 90%; }
+            62.5% { left: 76%; top: 72%; }
+            75%  { left: 92%; top: 40%; }
+            87.5% { left: 76%; top: 18%; }
+            100% { left: 50%; top: 25%; }
+        }
+
+        @keyframes spinningGlobeOrbit {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .cursive-love-ribbon {
+            text-align: center;
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.9rem;
+            color: var(--accent-pink);
+            text-shadow: 0 0 12px rgba(255, 42, 116, 0.6);
+        }
+
+        .app-system-footer {
+            text-align: center;
+            font-size: 0.6rem;
+            color: #9ca3af;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding-top: 8px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .micro-sparkle-node {
+            position: absolute;
+            pointer-events: none;
+            opacity: 0;
+            animation: particleRiseFade 3.5s linear infinite;
+            font-size: 12px;
+            z-index: 1;
+        }
+        @keyframes particleRiseFade {
+            0% { transform: translateY(10px) scale(0.6); opacity: 0; }
+            20% { opacity: 0.9; filter: drop-shadow(0 0 4px var(--accent-pink)); }
+            80% { opacity: 0.9; }
+            100% { transform: translateY(-120px) translateX(var(--drift-delta-x)) scale(1.3); opacity: 0; }
+        }
+
+        /* Hidden background frame handler container for YouTube Embed API */
+        #yt-audio-backend {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            opacity: 0;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="yt-audio-backend"></div>
+
+    <div class="mobile-viewport-shell">
+        
+        <div class="music-player-widget">
+            <div class="music-info">
+                <span class="music-title">លង់ស្នេហ៍សង្សារខ្លួនឯង (MY POOKIE)</span>
+                <span class="music-sub">CHIWAWA — Tap to Play</span>
+            </div>
+            <button class="play-btn-node" id="playAudioTrigger" onclick="toggleAudioPlayback()">▶</button>
+        </div>
+
+        <div class="app-brand-header">
+            <h1>Relationship 🌹</h1>
+            <p>With My Love💕</p>
+        </div>
+
+        <div class="marquee-status-banner">
+            <span>Two hearts, one synchronized rhythmic ticking timeline... Every second counts with you. 💞🌹</span>
+        </div>
+
+        <div class="white-milestone-panel">
+            <div class="milestone-caption-lbl">Total Days In Love🙄</div>
+            <div class="milestone-counter-display" id="total-days-val">1066</div>
+            <div class="milestone-footer-date">
+                💍 Anniversary: 01/08/2023 💍
+            </div>
+        </div>
+
+        <div class="dashboard-mid-grid">
+            <div class="clock-perspective-container">
+                <div class="luxury-analog-dial">
+                    <div class="dial-numeral num-12">XII</div>
+                    <div class="dial-numeral num-3">III</div>
+                    <div class="dial-numeral num-6">VI</div>
+                    <div class="dial-numeral num-9">IX</div>
+                    
+                    <div class="clock-hand-vector hand-hour" id="h-hand"></div>
+                    <div class="clock-hand-vector hand-minute" id="m-hand"></div>
+                    <div class="clock-hand-vector hand-second" id="s-hand"></div>
+                    <div class="dial-center-axis"></div>
+                </div>
+            </div>
+
+            <div class="numerical-matrix-board">
+                <div class="matrix-row-item"><span class="matrix-lbl">Years</span><span class="matrix-val" id="v-yr">02</span></div>
+                <div class="matrix-row-item"><span class="matrix-lbl">Months</span><span class="matrix-val" id="v-mo">11</span></div>
+                <div class="matrix-row-item"><span class="matrix-lbl">Weeks</span><span class="matrix-val" id="v-wk">00</span></div>
+                <div class="matrix-row-item"><span class="matrix-lbl">Days</span><span class="matrix-val" id="v-dy">01</span></div>
+                <div class="matrix-row-item"><span class="matrix-lbl">Hours</span><span class="matrix-val" id="v-hr">21</span></div>
+                <div class="matrix-row-item"><span class="matrix-lbl">Mins</span><span class="matrix-val" id="v-mn">27</span></div>
+                <div class="matrix-row-item"><span class="matrix-lbl">Secs</span><span class="matrix-val" id="v-sc">04</span></div>
+            </div>
+        </div>
+
+        <div class="relationship-orbit-deck" id="particle-emitter-bounding-rect">
+            <div class="cats-centerpiece-node">
+                <img src="https://i.postimg.cc/0QfxXMVh/image-(1).png" alt="Love Couple Center Mascot Element">
+            </div>
+
+            <div class="orbital-avatar-pod path-beautiful-runner" style="--theme-color: var(--accent-beautiful);">
+                <div class="globe-mesh-ring">
+                    <div class="pod-profile-circle">
+                        <img src="https://i.postimg.cc/PxKt9Ptz/image6.jpg" alt="Beautiful Avatar Portrait asset">
+                    </div>
+                </div>
+                <div class="pod-identity-tag">TINA</div>
+            </div>
+
+            <div class="orbital-avatar-pod path-handsome-runner" style="--theme-color: var(--accent-handsome);">
+                <div class="globe-mesh-ring">
+                    <div class="pod-profile-circle">
+                        <img src="https://i.postimg.cc/j5svVysP/file-0000000094f07209a4d071a6711c8255.png" alt="Handsome Avatar Portrait asset">
+                    </div>
+                </div>
+                <div class="pod-identity-tag">REACH</div>
+            </div>
+        </div>
+
+        <div class="cursive-love-ribbon">
+            ❤️Forever
+        </div>
+
+        <div class="app-system-footer">
+            TIME IS, I NEED YOU 💕
+        </div>
+    </div>
+
+    <script>
+        const targetAnniversaryEpoch = new Date('2023-08-01T00:00:00');
+        let audioEnginePlayer = null;
+        let isAudioCurrentlyPlaying = false;
+
+        // Load the official YouTube Iframe Player Async API Script Node
+        const scriptTag = document.createElement('script');
+        scriptTag.src = "https://www.youtube.com/iframe_api";
+        const firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(scriptTag, firstScriptTag);
+
+        // Global callback function instantiated automatically when API loads
+        function onYouTubeIframeAPIReady() {
+            audioEnginePlayer = new YT.Player('yt-audio-backend', {
+                height: '100',
+                width: '100',
+                videoId: 'tgZfYaAj7Z8',
+                playerVars: {
+                    'playsinline': 1,
+                    'controls': 0,
+                    'disablekb': 1,
+                    'modestbranding': 1
+                },
+                events: {
+                    'onReady': () => console.log("Audio Engine Connected Smoothly.")
+                }
+            });
+        }
+
+        function toggleAudioPlayback() {
+            if (!audioEnginePlayer || typeof audioEnginePlayer.playVideo !== 'function') return;
+            
+            const triggerBtn = document.getElementById('playAudioTrigger');
+            if (!isAudioCurrentlyPlaying) {
+                audioEnginePlayer.playVideo();
+                triggerBtn.innerText = "❚❚";
+                isAudioCurrentlyPlaying = true;
+            } else {
+                audioEnginePlayer.pauseVideo();
+                triggerBtn.innerText = "▶";
+                isAudioCurrentlyPlaying = false;
+            }
+        }
+
+        function executeClockEngineTick() {
+            const timeNow = new Date();
+
+            // Clock mechanical rotating degree hand tracking formulas
+            const s = timeNow.getSeconds();
+            const m = timeNow.getMinutes();
+            const h = timeNow.getHours();
+
+            const sDegrees = (s / 60) * 360;
+            const mDegrees = ((m / 60) * 360) + ((s / 60) * 6);
+            const hDegrees = ((h % 12) / 12 * 360) + ((m / 60) * 30);
+
+            document.getElementById('s-hand').style.transform = `translateX(-50%) rotate(${sDegrees}deg)`;
+            document.getElementById('m-hand').style.transform = `translateX(-50%) rotate(${mDegrees}deg)`;
+            document.getElementById('h-hand').style.transform = `translateX(-50%) rotate(${hDegrees}deg)`;
+
+            // Delta time math calculation engine layers
+            const totalMsDelta = timeNow - targetAnniversaryEpoch;
+            const absoluteWholeDays = Math.floor(totalMsDelta / (1000 * 60 * 60 * 24));
+            document.getElementById('total-days-val').innerText = absoluteWholeDays;
+
+            let monthsNetDiff = (timeNow.getFullYear() - targetAnniversaryEpoch.getFullYear()) * 12 + (timeNow.getMonth() - targetAnniversaryEpoch.getMonth());
+            if (timeNow.getDate() < targetAnniversaryEpoch.getDate() || (timeNow.getDate() === targetAnniversaryEpoch.getDate() && timeNow.getHours() < targetAnniversaryEpoch.getHours())) {
+                monthsNetDiff--;
+            }
+
+            const yearsOutput = Math.floor(monthsNetDiff / 12);
+            const monthsOutput = monthsNetDiff % 12;
+
+            let secondaryAnchorDate = new Date(targetAnniversaryEpoch);
+            secondaryAnchorDate.setFullYear(targetAnniversaryEpoch.getFullYear() + yearsOutput);
+            secondaryAnchorDate.setMonth(secondaryAnchorDate.getMonth() + monthsOutput);
+
+            let remainingTimeMs = timeNow - secondaryAnchorDate;
+            const msInADay = 24 * 60 * 60 * 1000;
+            let netExtractedDays = Math.floor(remainingTimeMs / msInADay);
+
+            const weeksOutput = Math.floor(netExtractedDays / 7);
+            const daysOutput = netExtractedDays % 7;
+
+            remainingTimeMs -= netExtractedDays * msInADay;
+            const hoursOutput = Math.floor(remainingTimeMs / (1000 * 60 * 60));
+            remainingTimeMs -= hoursOutput * (1000 * 60 * 60);
+            const minutesOutput = Math.floor(remainingTimeMs / (1000 * 60));
+            remainingTimeMs -= minutesOutput * (1000 * 60);
+            const secondsOutput = Math.floor(remainingTimeMs / 1000);
+
+            // Inject metrics inside UI matrix view rows slots numbers
+            document.getElementById('v-yr').innerText = String(yearsOutput).padStart(2, '0');
+            document.getElementById('v-mo').innerText = String(monthsOutput).padStart(2, '0');
+            document.getElementById('v-wk').innerText = String(weeksOutput).padStart(2, '0');
+            document.getElementById('v-dy').innerText = String(daysOutput).padStart(2, '0');
+            document.getElementById('v-hr').innerText = String(hoursOutput).padStart(2, '0');
+            document.getElementById('v-mn').innerText = String(minutesOutput).padStart(2, '0');
+            document.getElementById('v-sc').innerText = String(secondsOutput).padStart(2, '0');
+        }
+
+        function createMicroSparkleEmitters() {
+            const container = document.getElementById('particle-emitter-bounding-rect');
+            const icons = ['❤️', '💖', '✨', '💕', '🌸', '💫', '🌹', '💞' , '😍', '🌷', '💐'];
+            setInterval(() => {
+                const node = document.createElement('div');
+                node.classList.add('micro-sparkle-node');
+                node.innerText = icons[Math.floor(Math.random() * icons.length)];
+                node.style.left = (Math.random() * 70 + 15) + '%';
+                node.style.bottom = '20px';
+                node.style.setProperty('--drift-delta-x', (Math.random() * 60 - 30) + 'px');
+                node.style.animationDuration = (Math.random() * 1.5 + 2.0) + 's';
+                container.appendChild(node);
+                setTimeout(() => node.remove(), 3500);
+            }, 500);
+        }
+
+        executeClockEngineTick();
+        setInterval(executeClockEngineTick, 1000);
+        createMicroSparkleEmitters();
+    </script>
+</body>
+</html>
